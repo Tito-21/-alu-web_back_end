@@ -10,3 +10,4 @@ def filter_datum(
     """Obfuscate specified fields in a log message"""
     pattern = r'(' + '|'.join(fields) + r')=[^' + separator + r']*'
     return re.sub(pattern, lambda m: m.group(1) + '=' + redaction, message)
+
